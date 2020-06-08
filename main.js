@@ -1,6 +1,6 @@
 const path = require('path')
 const url = require('url')
-const { app } = require('electron')
+const { app, ipcMain } = require('electron')
 const {mainWindow, createMainWindow} = require('./windowfunctions')
 
 
@@ -8,7 +8,7 @@ const {mainWindow, createMainWindow} = require('./windowfunctions')
 
 
 
-// 
+// app level events
 
 app.on('ready', createMainWindow)
 
@@ -23,6 +23,15 @@ app.on('activate', () => {
         createMainWindow()
     }
 })
+
+
+
+// ipc events 
+ipcMain.on('click:increase',(e,data)=>{
+    console.log(e);
+    console.log(data);
+})
+
 
 // Stop error
 app.allowRendererProcessReuse = true

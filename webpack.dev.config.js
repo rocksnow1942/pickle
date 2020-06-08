@@ -28,7 +28,7 @@ module.exports = {
     },
     target: 'electron-renderer',
     plugins: [
-        new HtmlWebpackPlugin({ title: 'Pickle' }),
+        new HtmlWebpackPlugin({ title: 'Cube' }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development'),
         }),

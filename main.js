@@ -26,6 +26,7 @@ function createMainWindow() {
 
     let indexPath
 
+    // use react server as index
     if (isDev && process.argv.indexOf('--noDevServer') === -1) {
         indexPath = url.format({
             protocol: 'http:',
@@ -57,10 +58,9 @@ function createMainWindow() {
             installExtension(REACT_DEVELOPER_TOOLS).catch((err) =>
                 console.log('Error loading React DevTools: ', err)
             )
-            mainWindow.webContents.openDevTools()
+            // mainWindow.webContents.openDevTools()
         }
     })
-
     mainWindow.on('closed', () => (mainWindow = null))
 }
 

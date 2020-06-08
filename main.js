@@ -13,6 +13,9 @@ if (
     isDev = true
 }
 
+
+
+// Window functions
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         width: 1100,
@@ -63,6 +66,33 @@ function createMainWindow() {
     })
     mainWindow.on('closed', () => (mainWindow = null))
 }
+
+
+
+function createAboutWindow() {
+    aboutWindow = new BrowserWindow({
+        title: 'About Cube',
+        width: 300,
+        height: 300,
+        icon: path.join(__dirname,'assets','icon.png'),
+        resizable: isDev ? true : false,
+        backgroundColor: 'white'
+
+    })
+    aboutWindow.loadFile('./app/about.html')
+}
+
+
+
+
+
+
+
+
+
+
+
+// 
 
 app.on('ready', createMainWindow)
 

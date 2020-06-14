@@ -28,7 +28,7 @@ app.on('activate', () => {
 
 // ipc events 
 ipcMain.on('click:increase',(e,data)=>{
-    console.log(e);
+    
     console.log(data);
 })
 
